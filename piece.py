@@ -29,3 +29,6 @@ class Piece:
 
     def __repr__(self):
         return str(self.color)
+
+
+###this is test
