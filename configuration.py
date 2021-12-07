@@ -10,6 +10,7 @@ HEIGHT = 800
 BOARD_ROWS = 8
 BOARD_COLS = 8
 SQUARE_DIMENSION = WIDTH//BOARD_COLS
+BOARD_POS = (0,0)
 
 # rgb: red green blue
 RED = (255, 0, 0)

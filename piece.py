@@ -27,8 +27,10 @@ class Piece:
     def draw(self, screen):
         screen.blit(self.color, (self.x, self.y))
 
+
+
+
     def __repr__(self):
         return str(self.color)
 
 
-###this is test

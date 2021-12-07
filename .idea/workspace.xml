@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="18bac079-9128-4b4f-8145-bf1d72fdabb0" name="Changes" comment="" />
+    <list default="true" id="18bac079-9128-4b4f-8145-bf1d72fdabb0" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/board.py" beforeDir="false" afterPath="$PROJECT_DIR$/board.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkers_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/checkers_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chekers.py" beforeDir="false" afterPath="$PROJECT_DIR$/chekers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configuration.py" beforeDir="false" afterPath="$PROJECT_DIR$/configuration.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/piece.py" beforeDir="false" afterPath="$PROJECT_DIR$/piece.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -37,7 +44,7 @@
       <recent name="C:\Users\Admin\Documents\Python" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.chekers">
+  <component name="RunManager" selected="Python.checkers_test">
     <configuration name="board" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Python" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -151,10 +158,10 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.checkers_test" />
         <item itemvalue="Python.chekers" />
         <item itemvalue="Python.board" />
         <item itemvalue="Python.configuration" />
-        <item itemvalue="Python.checkers_test" />
         <item itemvalue="Python.configuration" />
       </list>
     </recent_temporary>
@@ -169,5 +176,16 @@
       <updated>1637846538731</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
