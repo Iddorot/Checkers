@@ -2,7 +2,7 @@ import pygame, sys, os
 import numpy as np
 from pygame.locals import *
 import configuration
-from configuration import SQUARE_DIMENSION, BOARD_ROWS, BOARD_COLS, SQUARE_COLOR, screen, WHITE, DARK,BOARD_POS
+from configuration import SQUARE_DIMENSION, BOARD_ROWS, BOARD_COLS, SQUARE_COLOR, screen, WHITE, DARK, background_img
 from piece import Piece
 
 
@@ -48,19 +48,16 @@ class Board:
                 if piece != 0:
                     piece.draw(screen)
 
-    def move_piece(self):
-        (x, y) = pygame.mouse.get_pos()
-        print(x,y)
-
     def get_square_under_mouse(self):
-        mouse_pos = pygame.Vector2(pygame.mouse.get_pos()) -BOARD_POS
+        mouse_pos = pygame.Vector2(pygame.mouse.get_pos())
         x, y = [int(v // SQUARE_DIMENSION) for v in mouse_pos]
         try:
             if x >= 0 and y >= 0:
                 return self.board[y][x], x, y
         except IndexError:
-            pass
+            return "IndexError"
         return None, None, None
 
-
+    def clean_screen(self):
+        screen.blit(background_img, (0, 0))
 
