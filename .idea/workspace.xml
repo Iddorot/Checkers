@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="18bac079-9128-4b4f-8145-bf1d72fdabb0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/board.py" beforeDir="false" afterPath="$PROJECT_DIR$/board.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chekers.py" beforeDir="false" afterPath="$PROJECT_DIR$/chekers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configuration.py" beforeDir="false" afterPath="$PROJECT_DIR$/configuration.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/piece.py" beforeDir="false" afterPath="$PROJECT_DIR$/piece.py" afterDir="false" />
+    <list default="true" id="18bac079-9128-4b4f-8145-bf1d72fdabb0" name="Changes" comment="14.12">
+      <change afterPath="$PROJECT_DIR$/ERROR SOUND.mp3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,12 +23,15 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="21PdDl1E9Ar4qlLdId0Fs8pYI65" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File" value="Python" />
@@ -120,7 +119,7 @@
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/configuration.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\Admin\Documents\Python\configuration.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -129,22 +128,22 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="configuration" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Python" />
+    <configuration name="get_attachments_from_mailbox" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="C:\Users\Admin\AppData\Local\Programs\Python\Python310\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../emailTest" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="C:\Users\Admin\Documents\Python\configuration.py" />
+      <module name="" />
+      <option name="SCRIPT_NAME" value="C:\Users\Admin\Documents\emailTest\get_attachments_from_mailbox.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="EMULATE_TERMINAL" value="true" />
       <option name="MODULE_MODE" value="false" />
       <option name="REDIRECT_INPUT" value="false" />
       <option name="INPUT_FILE" value="" />
@@ -172,19 +171,20 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Python.configuration" />
       <item itemvalue="Python.board" />
       <item itemvalue="Python.checkers_test" />
       <item itemvalue="Python.chekers" />
-      <item itemvalue="Python.configuration" />
       <item itemvalue="Python.scratch" />
+      <item itemvalue="Python.get_attachments_from_mailbox" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.chekers" />
+        <item itemvalue="Python.get_attachments_from_mailbox" />
         <item itemvalue="Python.checkers_test" />
         <item itemvalue="Python.board" />
         <item itemvalue="Python.scratch" />
-        <item itemvalue="Python.configuration" />
       </list>
     </recent_temporary>
   </component>
@@ -197,6 +197,14 @@
       <option name="presentableId" value="Default" />
       <updated>1637846538731</updated>
     </task>
+    <task id="LOCAL-00001" summary="14.12">
+      <created>1639515429841</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1639515429841</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -210,5 +218,10 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="14.12" />
+    <option name="LAST_COMMIT_MESSAGE" value="14.12" />
   </component>
 </project>

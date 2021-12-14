@@ -12,10 +12,12 @@ BOARD_COLS = 8
 SQUARE_DIMENSION = WIDTH//BOARD_COLS
 
 
+
 # rgb: red green blue
 RED = (255, 0, 0)
 BG_COLOR = (28, 170, 156)
 SQUARE_COLOR = (147, 80, 0)
+
 
 # ------
 # SCREEN
@@ -25,6 +27,8 @@ background_img = pygame.image.load('BG.png')
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption('CHECKERS')
 screen.blit(background_img, (0, 0))
+
+
 
 # ------
 # PIECES
@@ -43,4 +47,5 @@ DARK = dark_p_img
 # CONSOLE BOARD
 # -------------
 board = np.zeros((BOARD_ROWS, BOARD_COLS))
+
 
