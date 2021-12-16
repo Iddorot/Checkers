@@ -8,7 +8,7 @@ from piece import Piece
 
 class Board:
     def __init__(self):
-        self.board = list()
+        self.board = []
         self.dark_left = 12
         self.white_left = 12
         self.dark_kings = 0
@@ -23,11 +23,12 @@ class Board:
                 if col % 2 == ((row + 1) % 2):
 
                     if row < 3:
-                        self.board[row].append(Piece(row, col, WHITE))
+                        self.board[row].append(Piece(row, col, "white"))
+
                     elif row > 4:
-                        self.board[row].append(Piece(row, col, DARK))
+                        self.board[row].append(Piece(row, col, "dark"))
                     else:
-                        self.board[row].append(0)
+                        self.board[row].append(Piece(row, col, "blank"))
                 else:
                     self.board[row].append(0)
 
@@ -40,7 +41,7 @@ class Board:
                                                  SQUARE_DIMENSION))
 
     def draw(self, screen):
-        x, y = pygame.mouse.get_pos()
+
         self.draw_sqaures(screen)
         for row in range(BOARD_ROWS):
             for col in range(BOARD_COLS):
@@ -60,4 +61,15 @@ class Board:
 
     def clean_screen(self):
         screen.blit(background_img, (0, 0))
+
+    def make_move(self, from_point,to_point):
+            self.board[to_point]=from_point.piece
+            self.board[from_point]=empty
+            self.board[to_point] = from_point.piece.change_pos(...)
+
+
+
+
+
+
 

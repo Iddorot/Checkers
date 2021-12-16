@@ -1,9 +1,6 @@
-import pygame, sys, os
-import numpy as np
-from pygame.locals import *
+
 import configuration
-import board
-from configuration import SQUARE_DIMENSION, screen
+from configuration import SQUARE_DIMENSION, screen, WHITE, DARK
 
 
 class Piece:
@@ -25,7 +22,10 @@ class Piece:
         self.king = True
 
     def draw(self, screen):
-        screen.blit(self.color, (self.x, self.y))
+        if self.color == "white":
+            screen.blit(WHITE, (self.x, self.y))
+        if self.color == "dark":
+            screen.blit(DARK, (self.x, self.y))
 
     def __repr__(self):
         return str(self.color)

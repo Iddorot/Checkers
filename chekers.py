@@ -39,12 +39,15 @@ class Game:
 
                 piece, x, y = game_board.get_square_under_mouse()
 
-                if ((x % 2 == 1) and (y % 2 == 0)) or ((y % 2 == 1) and (x % 2 == 0)):
+                if piece != 0:
                     rect = (x * SQUARE_DIMENSION, y * SQUARE_DIMENSION, SQUARE_DIMENSION, SQUARE_DIMENSION)
                     pygame.draw.rect(screen, RED, rect, 10)
                     mouse_click += 1
+                    from_point = (piece, x, y)
 
                 if mouse_click % 2 == 0:
+                    to_point = (piece, x, y)
+
                     game_board.clean_screen()
         game_board.draw(screen)
         clock.tick(60)
