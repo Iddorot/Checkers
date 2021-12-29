@@ -1,5 +1,4 @@
 
-import configuration
 from configuration import SQUARE_DIMENSION, screen, WHITE, DARK
 
 

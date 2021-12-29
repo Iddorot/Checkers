@@ -1,5 +1,4 @@
 import pygame, sys, os
-import numpy as np
 from pygame.locals import *
 from configuration import SQUARE_DIMENSION, BOARD_ROWS, BOARD_COLS, SQUARE_COLOR, screen, WHITE, DARK, background_img
 from piece import Piece
@@ -22,11 +21,6 @@ class Player:
                 if piece != 0:
                     piece.draw(screen)
 
-    def draw_piece(self, board):
-
-        piece = board[4][1]
-        piece.draw(screen)
-
     def get_square_under_mouse(self, board):
         mouse_pos = pygame.Vector2(pygame.mouse.get_pos())
         x, y = [int(v // SQUARE_DIMENSION) for v in mouse_pos]
@@ -47,7 +41,17 @@ class Player:
         from_piece.row = to_y
         from_piece.col = to_x
         from_piece.calc_pos()
-        board[from_y][from_x]= to_piece
+        board[from_y][from_x] = to_piece
         to_piece.row = from_y
         to_piece.col = from_x
         to_piece.calc_pos()
+
+    def check_valid_move(self, from_point, to_point):
+        (from_piece, from_x, from_y) = from_point
+        (to_piece, to_x, to_y) = to_point
+
+        if from_piece == "white" and to_y == from_y + 1 and (from_x == to_x + 1 or from_x == to_x - 1) and from_piece:
+            return True
+
+        if from_piece == "dark" and to_y == from_y - 1 and (from_x == to_x + 1 or from_x == to_x - 1):
+            return True
