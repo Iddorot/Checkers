@@ -1,4 +1,4 @@
-import pygame, sys, os
+import pygame
 import numpy as np
 from pygame.locals import *
 

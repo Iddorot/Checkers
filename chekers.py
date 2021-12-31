@@ -44,14 +44,14 @@ class Game:
                     if piece.color == "blank":
                         to_point = (piece, x, y)
 
-                        if gui.check_valid_move(from_point, to_point):
-                            gui.clean_screen()
-                            game_board.draw_squares(screen)
+                        if gui.check_valid_move(game_board.board, from_point, to_point) == "one":
+                            gui.clean_screen(game_board)
                             gui.make_move(game_board.board, from_point, to_point)
-                            gui.draw_pieces(game_board.board)
+
+                        elif gui.check_valid_move(game_board.board, from_point, to_point) == "eat":
+
+                            gui.clean_screen(game_board)
+                            gui.eat(game_board.board, from_point, to_point)
+
 
         gui.draw_pieces(game_board.board)
-
-        clock.tick(60)
-
-        pygame.display.update()
