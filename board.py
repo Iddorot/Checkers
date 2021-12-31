@@ -28,6 +28,7 @@ class Board:
                         self.board[row].append(Piece(row, col, "dark"))
                         self.dark_left += 1
 
+
                     else:
                         self.board[row].append(Piece(row, col, "blank"))
                 else:
@@ -43,8 +44,3 @@ class Board:
                     pygame.draw.rect(screen, SQUARE_COLOR,
                                      pygame.Rect(row * SQUARE_DIMENSION, col * SQUARE_DIMENSION, SQUARE_DIMENSION,
                                                  SQUARE_DIMENSION))
-
-
-
-
-

@@ -14,6 +14,7 @@ SQUARE_DIMENSION = WIDTH // BOARD_COLS
 RED = (255, 0, 0)
 BG_COLOR = (28, 170, 156)
 SQUARE_COLOR = (147, 80, 0)
+AZURE =(124,185,232)
 
 # ------
 # SCREEN
@@ -30,13 +31,25 @@ screen.blit(background_img, (0, 0))
 
 white_p_img = pygame.image.load("white_p.png")
 white_p_img.convert()
-white_p_img = pygame.transform.scale(white_p_img, (100, 100))
+white_p_img = pygame.transform.scale(white_p_img, (SQUARE_DIMENSION, SQUARE_DIMENSION))
 WHITE = white_p_img
+
+white_king_img = pygame.image.load("white_king.png")
+white_king_img.convert()
+white_king_img = pygame.transform.scale(white_king_img, (SQUARE_DIMENSION//2, SQUARE_DIMENSION//2))
+WHITE_KING = white_king_img
 
 dark_p_img = pygame.image.load("dark_p.png")
 dark_p_img.convert()
-dark_p_img = pygame.transform.scale(dark_p_img, (100, 100))
+dark_p_img = pygame.transform.scale(dark_p_img, (SQUARE_DIMENSION, SQUARE_DIMENSION))
 DARK = dark_p_img
+
+dark_king_img = pygame.image.load("dark_king.png")
+dark_king_img.convert()
+dark_king_img = pygame.transform.scale(dark_king_img, (SQUARE_DIMENSION//2, SQUARE_DIMENSION//2))
+DARK_KING = dark_king_img
+
+
 # -------------
 # CONSOLE BOARD
 # -------------
