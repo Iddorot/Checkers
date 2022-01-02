@@ -21,7 +21,7 @@ class Game:
     game_board = board.Board()
     gui = player.Player()
     rect_counter = False
-    player_counter = 1
+    player_counter = 'white'
     # --------
     # MAINLOOP
     # --------
@@ -36,28 +36,30 @@ class Game:
             if event.type == pygame.MOUSEBUTTONDOWN:
 
                 piece, x, y = gui.get_square_under_mouse(game_board.board)
+                rect = (x * SQUARE_DIMENSION, y * SQUARE_DIMENSION, SQUARE_DIMENSION, SQUARE_DIMENSION)
 
                 if piece != 0:
-                    if player_counter % 2 == 1:
+                    if player_counter == "white":
 
                         if piece.color == "white":
                             if not rect_counter:
-                                rect = (x * SQUARE_DIMENSION, y * SQUARE_DIMENSION, SQUARE_DIMENSION, SQUARE_DIMENSION)
                                 pygame.draw.rect(screen, RED, rect, 5)
                                 from_piece = piece
                                 rect_counter = True
                             elif rect_counter:
                                 gui.clean_screen(game_board)
-                                rect = (x * SQUARE_DIMENSION, y * SQUARE_DIMENSION, SQUARE_DIMENSION, SQUARE_DIMENSION)
                                 pygame.draw.rect(screen, RED, rect, 5)
                                 from_piece = piece
                                 rect_counter = True
 
-                        elif piece.color == "blank" and rect_counter:
+                        elif rect_counter:
                             to_piece = piece
-                            gui.make_move(game_board, from_piece, to_piece)
-                            rect_counter = False
-                            player_counter += 1
+                            what_move = gui.check_valid_move(game_board, from_piece, to_piece)
+
+                            if what_move != "pass":
+                                gui.make_move(game_board, from_piece, to_piece, what_move)
+                                rect_counter = False
+                                player_counter = 'dark'
                     else:
 
                         if piece.color == "dark":
@@ -72,10 +74,20 @@ class Game:
                                 pygame.draw.rect(screen, RED, rect, 5)
                                 from_piece = piece
                                 rect_counter = True
-                        elif piece.color == "blank" and rect_counter:
+
+                        elif rect_counter:
                             to_piece = piece
-                            gui.make_move(game_board, from_piece, to_piece)
-                            rect_counter = False
-                            player_counter += 1
+                            what_move = gui.check_valid_move(game_board, from_piece, to_piece)
+
+                            if what_move != "pass":
+                                gui.make_move(game_board, from_piece, to_piece, what_move)
+                                rect_counter = False
+                                player_counter = 'white'
 
         gui.draw_pieces(game_board.board)
+
+#TODO must eat
+#TODO double eating
+#TODO Kings move
+#winnig  ->end game/another one
+#Welome - names

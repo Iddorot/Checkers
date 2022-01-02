@@ -60,35 +60,36 @@ class Player:
         row_avg = (from_piece.row + to_piece.row) // 2
         col_avg = (from_piece.col + to_piece.col) // 2
 
-        if not from_piece.king:
+        if to_piece.color == "blank":
 
-            if from_piece.color == "white":
+            if not from_piece.king:
 
-                if to_piece.row == from_piece.row + 1 and col_check_one:
-                    return "one"
+                if from_piece.color == "white":
 
-                elif to_piece.row == from_piece.row + 2 and col_check_two:
-                    if board[row_avg][col_avg].color == "dark":
+                    if to_piece.row == from_piece.row + 1 and col_check_one:
+                        return "one"
+
+                    elif to_piece.row == from_piece.row + 2 and col_check_two and board.board[row_avg][col_avg].color == "dark":
                         return "eat"
 
-            elif from_piece.color == "dark":
+                elif from_piece.color == "dark":
+                    if to_piece.row == from_piece.row - 1 and col_check_one:
+                        return "one"
 
-                if to_piece.row == from_piece.row - 1 and col_check_one:
-                    return "one"
-
-                elif to_piece.row == from_piece.row - 2 and col_check_two:
-                    if board[row_avg][col_avg].color == "white":
+                    elif to_piece.row == from_piece.row - 2 and col_check_two and board.board[row_avg][col_avg].color == "white":
                         return "eat"
 
-    def make_move(self, board, from_piece, to_piece):
+    def make_move(self, board, from_piece, to_piece, what_move):
         self.clean_screen(board)
-        if self.check_valid_move(board.board, from_piece, to_piece) == "one":
+        if what_move == "one":
             self.move_one(board.board, from_piece, to_piece)
             self.king(to_piece)
 
-        elif self.check_valid_move(board.board, from_piece, to_piece) == "eat":
+        elif what_move == "eat":
+            board.reduce_piece(from_piece)
             self.eat(board.board, from_piece, to_piece)
             self.king(to_piece)
+
 
     def king(self, piece):
         if piece.row == 7 and piece.color == "white":

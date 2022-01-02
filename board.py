@@ -44,3 +44,9 @@ class Board:
                     pygame.draw.rect(screen, SQUARE_COLOR,
                                      pygame.Rect(row * SQUARE_DIMENSION, col * SQUARE_DIMENSION, SQUARE_DIMENSION,
                                                  SQUARE_DIMENSION))
+
+    def reduce_piece(self, piece):
+        if piece.color == "white":
+            self.dark_left -= 1
+        elif piece.color == "dark":
+            self.white_left -= 1
