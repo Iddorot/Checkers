@@ -60,6 +60,6 @@ class Game:
         gui.draw_pieces(game_board.board)
 
 
-#TODO Kings move
+#TODO Kings eat
 #winnig  ->end game/another one
 #Welome - names

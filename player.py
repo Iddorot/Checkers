@@ -80,7 +80,6 @@ class Player:
                         col_avg].color == "dark":
                         return "eat"
 
-
                 elif from_piece.color == "dark":
                     if to_piece.row == from_piece.row - 1 and col_check_one:
                         return "one"
