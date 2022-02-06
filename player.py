@@ -80,7 +80,9 @@ class Player:
                     elif to_piece.row == from_piece.row - 2 and col_check_two and board.board[row_avg][
                         col_avg].color == "white":
                         return "eat"
-
+            else:
+                if (to_piece.row == from_piece.row + 1 or from_piece.row - 1) and col_check_one:
+                    return "one"
 
     def make_move(self, board, from_piece, to_piece, what_move):
         self.clean_screen(board)
@@ -123,5 +125,3 @@ class Player:
         else:
             rect_counter = True
             return rect_counter
-
-
