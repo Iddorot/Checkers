@@ -40,17 +40,25 @@ class Player:
 
         board[to_piece.row][to_piece.col].color = from_piece.color
         board[from_piece.row][from_piece.col].color = "blank"
-        self.draw_pieces(board)
+        if not from_piece.king:
+            self.draw_pieces(board)
+        else:
+            board[to_piece.row][to_piece.col].king = True
+            self.draw_pieces(board)
 
     def eat(self, board, from_piece, to_piece):
 
         row_avg = (from_piece.row + to_piece.row) // 2
         col_avg = (from_piece.col + to_piece.col) // 2
-
         board[to_piece.row][to_piece.col].color = from_piece.color
         board[from_piece.row][from_piece.col].color = "blank"
         board[row_avg][col_avg].color = "blank"
-        self.draw_pieces(board)
+        if not from_piece.king:
+            self.draw_pieces(board)
+        else:
+            board[to_piece.row][to_piece.col].king = True
+            self.draw_pieces(board)
+
 
     def check_valid_move(self, board, from_piece, to_piece):
 
@@ -83,6 +91,7 @@ class Player:
             else:
                 if (to_piece.row == from_piece.row + 1 or from_piece.row - 1) and col_check_one:
                     return "one"
+
 
     def make_move(self, board, from_piece, to_piece, what_move):
         self.clean_screen(board)

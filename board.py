@@ -35,8 +35,6 @@ class Board:
                     self.board[row].append(0)
 
 
-
-
     def draw_squares(self, screen):
         for row in range(BOARD_ROWS):
             for col in range(BOARD_COLS):
