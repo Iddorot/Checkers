@@ -21,7 +21,7 @@ class Game:
     game_board = board.Board()
     gui = player.Player()
     rect_counter = False
-    player_counter = 'white'
+    player_turn = 'white'
     # --------
     # MAINLOOP
     # --------
@@ -39,55 +39,27 @@ class Game:
                 rect = (x * SQUARE_DIMENSION, y * SQUARE_DIMENSION, SQUARE_DIMENSION, SQUARE_DIMENSION)
 
                 if piece != 0:
-                    if player_counter == "white":
+                    if player_turn == "white":
+                        if piece.color == player_turn:
+                            from_piece, rect_counter = gui.draw_rect(rect, piece, rect_counter, game_board)
 
-                        if piece.color == "white":
+                        elif rect_counter and piece.color == "blank":
+                            rect_counter = gui.second_click(game_board, rect_counter, piece, player_turn, from_piece)
                             if not rect_counter:
-                                pygame.draw.rect(screen, RED, rect, 5)
-                                from_piece = piece
-                                rect_counter = True
-                            elif rect_counter:
-                                gui.clean_screen(game_board)
-                                pygame.draw.rect(screen, RED, rect, 5)
-                                from_piece = piece
-                                rect_counter = True
+                                player_turn = 'dark'
 
-                        elif rect_counter:
-                            to_piece = piece
-                            what_move = gui.check_valid_move(game_board, from_piece, to_piece)
+                    elif player_turn == "dark":
+                        if piece.color == player_turn:
+                            from_piece, rect_counter = gui.draw_rect(rect, piece, rect_counter, game_board)
 
-                            if what_move != "pass":
-                                gui.make_move(game_board, from_piece, to_piece, what_move)
-                                rect_counter = False
-                                player_counter = 'dark'
-                    else:
-
-                        if piece.color == "dark":
+                        elif rect_counter and piece.color == "blank":
+                            rect_counter = gui.second_click(game_board, rect_counter, piece, player_turn, from_piece)
                             if not rect_counter:
-                                rect = (x * SQUARE_DIMENSION, y * SQUARE_DIMENSION, SQUARE_DIMENSION, SQUARE_DIMENSION)
-                                pygame.draw.rect(screen, RED, rect, 5)
-                                from_piece = piece
-                                rect_counter = True
-                            elif rect_counter:
-                                gui.clean_screen(game_board)
-                                rect = (x * SQUARE_DIMENSION, y * SQUARE_DIMENSION, SQUARE_DIMENSION, SQUARE_DIMENSION)
-                                pygame.draw.rect(screen, RED, rect, 5)
-                                from_piece = piece
-                                rect_counter = True
-
-                        elif rect_counter:
-                            to_piece = piece
-                            what_move = gui.check_valid_move(game_board, from_piece, to_piece)
-
-                            if what_move != "pass":
-                                gui.make_move(game_board, from_piece, to_piece, what_move)
-                                rect_counter = False
-                                player_counter = 'white'
+                                player_turn = 'white'
 
         gui.draw_pieces(game_board.board)
 
-#TODO must eat
-#TODO double eating
+
 #TODO Kings move
 #winnig  ->end game/another one
 #Welome - names

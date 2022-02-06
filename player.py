@@ -1,7 +1,7 @@
 import pygame
 from pygame.locals import *
 from configuration import SQUARE_DIMENSION, BOARD_ROWS, BOARD_COLS, SQUARE_COLOR, screen, WHITE, DARK, background_img, \
-    AZURE
+    RED
 from piece import Piece
 import board
 from board import Board
@@ -21,7 +21,6 @@ class Player:
                 if piece != 0:
                     piece.draw(screen)
         pygame.display.update()
-
 
     def get_square_under_mouse(self, board):
         mouse_pos = pygame.Vector2(pygame.mouse.get_pos())
@@ -69,15 +68,19 @@ class Player:
                     if to_piece.row == from_piece.row + 1 and col_check_one:
                         return "one"
 
-                    elif to_piece.row == from_piece.row + 2 and col_check_two and board.board[row_avg][col_avg].color == "dark":
+                    elif to_piece.row == from_piece.row + 2 and col_check_two and board.board[row_avg][
+                        col_avg].color == "dark":
                         return "eat"
+
 
                 elif from_piece.color == "dark":
                     if to_piece.row == from_piece.row - 1 and col_check_one:
                         return "one"
 
-                    elif to_piece.row == from_piece.row - 2 and col_check_two and board.board[row_avg][col_avg].color == "white":
+                    elif to_piece.row == from_piece.row - 2 and col_check_two and board.board[row_avg][
+                        col_avg].color == "white":
                         return "eat"
+
 
     def make_move(self, board, from_piece, to_piece, what_move):
         self.clean_screen(board)
@@ -90,10 +93,35 @@ class Player:
             self.eat(board.board, from_piece, to_piece)
             self.king(to_piece)
 
-
     def king(self, piece):
         if piece.row == 7 and piece.color == "white":
             piece.make_king()
         elif piece.row == 0 and piece.color == "dark":
             piece.make_king()
+
+    def draw_rect(self, rect, piece, rect_counter, game_board):
+        if not rect_counter:
+            pygame.draw.rect(screen, RED, rect, 5)
+            from_piece = piece
+            rect_counter = True
+            return from_piece, rect_counter
+        elif rect_counter:
+            self.clean_screen(game_board)
+            pygame.draw.rect(screen, RED, rect, 5)
+            from_piece = piece
+            rect_counter = True
+            return from_piece, rect_counter
+
+    def second_click(self, game_board, rect_counter, piece, player_turn, from_piece):
+        to_piece = piece
+        what_move = self.check_valid_move(game_board, from_piece, to_piece)
+
+        if what_move is not None:
+            self.make_move(game_board, from_piece, to_piece, what_move)
+            rect_counter = False
+            return rect_counter
+        else:
+            rect_counter = True
+            return rect_counter
+
 
