@@ -84,7 +84,12 @@ class Game():
                                 rect_counter = gui.second_click(game_board, rect_counter, piece, player_turn,
                                                                 from_piece)
                                 if not rect_counter:
-                                    player_turn = 'dark'
+                                    if gui.check_win(game_board) is not None:
+                                        game_over = True
+                                        sys.exit()
+                                        self.end_game(self)
+                                    else:
+                                        player_turn = 'dark'
 
                         elif player_turn == "dark":
                             if piece.color == player_turn:
@@ -94,7 +99,14 @@ class Game():
                                 rect_counter = gui.second_click(game_board, rect_counter, piece, player_turn,
                                                                 from_piece)
                                 if not rect_counter:
-                                    player_turn = 'white'
+                                    if gui.check_win(game_board) is not None:
+                                        game_over = True
+                                        sys.exit()
+                                        self.end_game(self)
+                                    else:
+                                        player_turn = 'white'
+
+
 
             gui.draw_pieces(game_board.board)
 

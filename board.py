@@ -48,3 +48,4 @@ class Board:
             self.dark_left -= 1
         elif piece.color == "dark":
             self.white_left -= 1
+

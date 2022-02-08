@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="18bac079-9128-4b4f-8145-bf1d72fdabb0" name="Changes" comment="Welcome Menu First">
+    <list default="true" id="18bac079-9128-4b4f-8145-bf1d72fdabb0" name="Changes" comment="Welcome Menu - Done">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/board.py" beforeDir="false" afterPath="$PROJECT_DIR$/board.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chekers.py" beforeDir="false" afterPath="$PROJECT_DIR$/chekers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configuration.py" beforeDir="false" afterPath="$PROJECT_DIR$/configuration.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/player.py" beforeDir="false" afterPath="$PROJECT_DIR$/player.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -278,7 +279,21 @@
       <option name="project" value="LOCAL" />
       <updated>1644335358974</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Welcome Menu - Done">
+      <created>1644338831356</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1644338831356</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Welcome Menu - Done">
+      <created>1644338938645</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1644338938645</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -305,7 +320,8 @@
     <MESSAGE value="King's Move - Eat + One fix Bug" />
     <MESSAGE value="Game Class - welcome+ end game functions" />
     <MESSAGE value="Welcome Menu First" />
-    <option name="LAST_COMMIT_MESSAGE" value="Welcome Menu First" />
+    <MESSAGE value="Welcome Menu - Done" />
+    <option name="LAST_COMMIT_MESSAGE" value="Welcome Menu - Done" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

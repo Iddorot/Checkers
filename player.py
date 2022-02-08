@@ -140,7 +140,15 @@ class Player:
             self.make_move(game_board, from_piece, to_piece, what_move)
             rect_counter = False
             return rect_counter
+
         else:
             rect_counter = True
             return rect_counter
 
+    def check_win(self, board):
+        if board.dark_left == 0:
+            "white wins"
+        elif board.white_left == 0:
+            "dark wins"
+        else:
+            None
