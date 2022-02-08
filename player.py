@@ -43,6 +43,7 @@ class Player:
         if not from_piece.king:
             self.draw_pieces(board)
         else:
+            board[from_piece.row][from_piece.col].king = False
             board[to_piece.row][to_piece.col].king = True
             self.draw_pieces(board)
 
@@ -56,6 +57,7 @@ class Player:
         if not from_piece.king:
             self.draw_pieces(board)
         else:
+            board[from_piece.row][from_piece.col].king = False
             board[to_piece.row][to_piece.col].king = True
             self.draw_pieces(board)
 
