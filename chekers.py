@@ -1,7 +1,7 @@
 import pygame, sys, os
 from pygame import Color, Surface
 from pygame.locals import *
-from configuration import screen, SQUARE_DIMENSION, RED
+from configuration import screen, SQUARE_DIMENSION
 import board
 import piece
 import player
@@ -60,6 +60,5 @@ class Game:
         gui.draw_pieces(game_board.board)
 
 
-#TODO Kings
 #winnig  ->end game/another one
 #Welome - names

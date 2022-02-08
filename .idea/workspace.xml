@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="18bac079-9128-4b4f-8145-bf1d72fdabb0" name="Changes" comment="King's Move One">
-      <change beforePath="$PROJECT_DIR$/player.py" beforeDir="false" afterPath="$PROJECT_DIR$/player.py" afterDir="false" />
+    <list default="true" id="18bac079-9128-4b4f-8145-bf1d72fdabb0" name="Changes" comment="King's Move - Eat + One fix Bug">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chekers.py" beforeDir="false" afterPath="$PROJECT_DIR$/chekers.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -248,7 +249,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644319983132</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="King's Move - Eat + One fix Bug">
+      <created>1644320455406</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1644320455406</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -272,7 +280,8 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="14.12" />
     <MESSAGE value="King's Move One" />
-    <option name="LAST_COMMIT_MESSAGE" value="King's Move One" />
+    <MESSAGE value="King's Move - Eat + One fix Bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="King's Move - Eat + One fix Bug" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
