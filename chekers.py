@@ -17,10 +17,9 @@ class Game():
 
     def welcome_menu(self):
         run = True
-        screen.blit(background_img, (0, 0))
         font = pygame.font.Font('freesansbold.ttf', TEXT_SIZE)
         game_board = board.Board()
-        game_board.draw_squares(screen)
+        screen.blit(background_img, (0, 0))
 
         while run:
 
