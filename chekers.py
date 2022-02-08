@@ -1,7 +1,7 @@
 import pygame, sys, os
 from pygame import Color, Surface
 from pygame.locals import *
-from configuration import screen, SQUARE_DIMENSION,background_img, SQUARE_COLOR,BRIGHT_SQUARE_COLOR
+from configuration import screen, SQUARE_DIMENSION,background_img, SQUARE_COLOR,BRIGHT_SQUARE_COLOR, HEIGHT ,WIDTH ,TEXT_SIZE
 import board
 import piece
 import player
@@ -18,7 +18,9 @@ class Game():
     def welcome_menu(self):
         run = True
         screen.blit(background_img, (0, 0))
-        font = pygame.font.Font('freesansbold.ttf', 32)
+        font = pygame.font.Font('freesansbold.ttf', TEXT_SIZE)
+        game_board = board.Board()
+        game_board.draw_squares(screen)
 
         while run:
 
@@ -28,16 +30,19 @@ class Game():
                     quit()
                     run = False
 
-                if 400 + 100 > mouse[0] > 400 and 275 + 50 > mouse[1] > 275:
-                    pygame.draw.rect(screen, BRIGHT_SQUARE_COLOR, (400, 275, 100, 50))
+                if (WIDTH/2 + 125 > mouse[0] > 300) and HEIGHT/2 + 50 > mouse[1] > HEIGHT/2-50:
+                    pygame.draw.rect(screen, BRIGHT_SQUARE_COLOR, (WIDTH/2 - 100, HEIGHT/2- 50, 220, 110))
 
                     if event.type == pygame.MOUSEBUTTONDOWN:
+                        gui = player.Player()
+                        gui.clean_screen(game_board)
                         self.game_loop(self)
-                else:
-                    pygame.draw.rect(screen, SQUARE_COLOR, (400, 275, 100, 50))
 
-                screen.blit(font.render("Checkers", True, (255, 255, 255)), (325, 50))
-                screen.blit(font.render("Play", True, (0, 0, 0)), (417, 285))
+                else:
+                    pygame.draw.rect(screen, SQUARE_COLOR, (WIDTH/2 - 100, HEIGHT/2- 50, 220, 110))
+
+                screen.blit(font.render("Checkers", True, (255, 255, 255)), (WIDTH/4 - 25, 50))
+                screen.blit(font.render("Play", True, (0, 0, 0)), (WIDTH/2 - 100, HEIGHT/2 - 50))
 
             pygame.display.flip()
 
@@ -59,7 +64,7 @@ class Game():
         # MAINLOOP
         # --------
 
-        while True:
+        while not game_over:
 
             for event in pygame.event.get():
 
