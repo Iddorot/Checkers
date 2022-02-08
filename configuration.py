@@ -12,10 +12,8 @@ SQUARE_DIMENSION = WIDTH // BOARD_COLS
 
 # rgb: red green blue
 RED = (255, 0, 0)
-BG_COLOR = (28, 170, 156)
 SQUARE_COLOR = (147, 80, 0)
-AZURE =(124,185,232)
-
+BRIGHT_SQUARE_COLOR = (160, 90, 0)
 # ------
 # SCREEN
 # ------
@@ -24,7 +22,6 @@ background_img = pygame.image.load('BG.png')
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption('CHECKERS')
 screen.blit(background_img, (0, 0))
-
 
 # ------
 # PIECES
@@ -37,7 +34,7 @@ WHITE = white_p_img
 
 white_king_img = pygame.image.load("white_king.png")
 white_king_img.convert()
-white_king_img = pygame.transform.scale(white_king_img, (SQUARE_DIMENSION//2, SQUARE_DIMENSION//2))
+white_king_img = pygame.transform.scale(white_king_img, (SQUARE_DIMENSION // 2, SQUARE_DIMENSION // 2))
 WHITE_KING = white_king_img
 
 dark_p_img = pygame.image.load("dark_p.png")
@@ -47,11 +44,38 @@ DARK = dark_p_img
 
 dark_king_img = pygame.image.load("dark_king.png")
 dark_king_img.convert()
-dark_king_img = pygame.transform.scale(dark_king_img, (SQUARE_DIMENSION//2, SQUARE_DIMENSION//2))
+dark_king_img = pygame.transform.scale(dark_king_img, (SQUARE_DIMENSION // 2, SQUARE_DIMENSION // 2))
 DARK_KING = dark_king_img
-
 
 # -------------
 # CONSOLE BOARD
 # -------------
 board = np.zeros((BOARD_ROWS, BOARD_COLS))
+
+
+# -------------
+# BUTTON
+# -------------
+
+class Button():
+    def __init__(self, color, x, y, width, height, text=''):
+        self.color = color
+        self.x = x
+        self.y = y
+        self.width = width
+        self.height = height
+        self.text = text
+
+    def draw(self, win, outline=None):
+
+        # Call this method to draw the button on the screen
+        if outline:
+            pygame.draw.rect(win, outline, (self.x - 2, self.y - 2, self.width + 4, self.height + 4), 0)
+
+        pygame.draw.rect(win, self.color, (self.x, self.y, self.width, self.height), 0)
+
+        if self.text != '':
+            font = pygame.font.SysFont('comicsans', 20)
+            text = font.render(self.text, 1, (0, 0, 0))
+            win.blit(text, (
+                self.x + (self.width / 2 - text.get_width() / 2), self.y + (self.height / 2 - text.get_height() / 2)))

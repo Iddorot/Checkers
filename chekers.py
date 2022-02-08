@@ -1,7 +1,7 @@
 import pygame, sys, os
 from pygame import Color, Surface
 from pygame.locals import *
-from configuration import screen, SQUARE_DIMENSION
+from configuration import screen, SQUARE_DIMENSION,background_img, SQUARE_COLOR,BRIGHT_SQUARE_COLOR
 import board
 import piece
 import player
@@ -16,7 +16,33 @@ class Game():
         self.welcome_menu()
 
     def welcome_menu(self):
-        pass
+        run = True
+        screen.blit(background_img, (0, 0))
+        font = pygame.font.Font('freesansbold.ttf', 32)
+
+        while run:
+
+            mouse = pygame.mouse.get_pos()
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    quit()
+                    run = False
+
+                if 400 + 100 > mouse[0] > 400 and 275 + 50 > mouse[1] > 275:
+                    pygame.draw.rect(screen, BRIGHT_SQUARE_COLOR, (400, 275, 100, 50))
+
+                    if event.type == pygame.MOUSEBUTTONDOWN:
+                        self.game_loop(self)
+                else:
+                    pygame.draw.rect(screen, SQUARE_COLOR, (400, 275, 100, 50))
+
+                screen.blit(font.render("Checkers", True, (255, 255, 255)), (325, 50))
+                screen.blit(font.render("Play", True, (0, 0, 0)), (417, 285))
+
+            pygame.display.flip()
+
+
+
 
     def end_game(self):
         pass
@@ -72,4 +98,4 @@ class Game():
 # Welome - names
 # winnig  ->end game/another one
 test = Game
-test.game_loop(test)
+test.welcome_menu(test)
