@@ -59,13 +59,13 @@ class Player:
             board[to_piece.row][to_piece.col].king = True
             self.draw_pieces(board)
 
-
     def check_valid_move(self, board, from_piece, to_piece):
 
         col_check_one = (from_piece.col == to_piece.col + 1 or from_piece.col == to_piece.col - 1)
         col_check_two = (from_piece.col == to_piece.col + 2 or from_piece.col == to_piece.col - 2)
         row_avg = (from_piece.row + to_piece.row) // 2
         col_avg = (from_piece.col + to_piece.col) // 2
+        row_check_two_king = ((from_piece.row - 2 or from_piece.row + 2) and col_check_two)
 
         if to_piece.color == "blank":
 
@@ -91,6 +91,13 @@ class Player:
                 if (to_piece.row == from_piece.row + 1 or from_piece.row - 1) and col_check_one:
                     return "one"
 
+                if from_piece.color == "white":
+                    if row_check_two_king and board.board[row_avg][col_avg].color == "dark":
+                        return "eat"
+
+                if from_piece.color == "dark":
+                    if row_check_two_king and board.board[row_avg][col_avg].color == "white":
+                        return "eat"
 
     def make_move(self, board, from_piece, to_piece, what_move):
         self.clean_screen(board)

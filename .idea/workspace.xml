@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="18bac079-9128-4b4f-8145-bf1d72fdabb0" name="Changes" comment="14.12">
+    <list default="true" id="18bac079-9128-4b4f-8145-bf1d72fdabb0" name="Changes" comment="King's Move One">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/board.py" beforeDir="false" afterPath="$PROJECT_DIR$/board.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/player.py" beforeDir="false" afterPath="$PROJECT_DIR$/player.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -229,7 +228,21 @@
       <option name="project" value="LOCAL" />
       <updated>1644178644854</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="14.12">
+      <created>1644180156008</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1644180156008</updated>
+    </task>
+    <task id="LOCAL-00005" summary="King's Move One">
+      <created>1644180215279</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1644180215279</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -252,7 +265,8 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="14.12" />
-    <option name="LAST_COMMIT_MESSAGE" value="14.12" />
+    <MESSAGE value="King's Move One" />
+    <option name="LAST_COMMIT_MESSAGE" value="King's Move One" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
