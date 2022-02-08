@@ -11,54 +11,65 @@ os.environ['SDL_VIDEO_CENTERED'] = '1'
 pygame.init()
 
 
-class Game:
-    # ---------
-    # VARIABLES
-    # ---------
+class Game():
+    def __init__(self):
+        self.welcome_menu()
 
-    clock = pygame.time.Clock()
-    game_over = False
-    game_board = board.Board()
-    gui = player.Player()
-    rect_counter = False
-    player_turn = 'white'
-    # --------
-    # MAINLOOP
-    # --------
+    def welcome_menu(self):
+        pass
 
-    while True:
+    def end_game(self):
+        pass
 
-        for event in pygame.event.get():
+    def game_loop(self):
 
-            if event.type == pygame.QUIT:
-                sys.exit()
+        clock = pygame.time.Clock()
+        game_over = False
+        game_board = board.Board()
+        gui = player.Player()
+        rect_counter = False
+        player_turn = 'white'
+        # --------
+        # MAINLOOP
+        # --------
 
-            if event.type == pygame.MOUSEBUTTONDOWN:
+        while True:
 
-                piece, x, y = gui.get_square_under_mouse(game_board.board)
-                rect = (x * SQUARE_DIMENSION, y * SQUARE_DIMENSION, SQUARE_DIMENSION, SQUARE_DIMENSION)
+            for event in pygame.event.get():
 
-                if piece != 0:
-                    if player_turn == "white":
-                        if piece.color == player_turn:
-                            from_piece, rect_counter = gui.draw_rect(rect, piece, rect_counter, game_board)
+                if event.type == pygame.QUIT:
+                    sys.exit()
 
-                        elif rect_counter and piece.color == "blank":
-                            rect_counter = gui.second_click(game_board, rect_counter, piece, player_turn, from_piece)
-                            if not rect_counter:
-                                player_turn = 'dark'
+                if event.type == pygame.MOUSEBUTTONDOWN:
 
-                    elif player_turn == "dark":
-                        if piece.color == player_turn:
-                            from_piece, rect_counter = gui.draw_rect(rect, piece, rect_counter, game_board)
+                    piece, x, y = gui.get_square_under_mouse(game_board.board)
+                    rect = (x * SQUARE_DIMENSION, y * SQUARE_DIMENSION, SQUARE_DIMENSION, SQUARE_DIMENSION)
 
-                        elif rect_counter and piece.color == "blank":
-                            rect_counter = gui.second_click(game_board, rect_counter, piece, player_turn, from_piece)
-                            if not rect_counter:
-                                player_turn = 'white'
+                    if piece != 0:
+                        if player_turn == "white":
+                            if piece.color == player_turn:
+                                from_piece, rect_counter = gui.draw_rect(rect, piece, rect_counter, game_board)
 
-        gui.draw_pieces(game_board.board)
+                            elif rect_counter and piece.color == "blank":
+                                rect_counter = gui.second_click(game_board, rect_counter, piece, player_turn,
+                                                                from_piece)
+                                if not rect_counter:
+                                    player_turn = 'dark'
+
+                        elif player_turn == "dark":
+                            if piece.color == player_turn:
+                                from_piece, rect_counter = gui.draw_rect(rect, piece, rect_counter, game_board)
+
+                            elif rect_counter and piece.color == "blank":
+                                rect_counter = gui.second_click(game_board, rect_counter, piece, player_turn,
+                                                                from_piece)
+                                if not rect_counter:
+                                    player_turn = 'white'
+
+            gui.draw_pieces(game_board.board)
 
 
-#winnig  ->end game/another one
-#Welome - names
+# Welome - names
+# winnig  ->end game/another one
+test = Game
+test.game_loop(test)

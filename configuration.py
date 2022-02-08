@@ -25,6 +25,7 @@ screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption('CHECKERS')
 screen.blit(background_img, (0, 0))
 
+
 # ------
 # PIECES
 # ------

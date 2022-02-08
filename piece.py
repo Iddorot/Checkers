@@ -13,7 +13,6 @@ class Piece:
         self.y = 0
         self.calc_pos()
 
-
     def calc_pos(self):
         self.x = SQUARE_DIMENSION * self.col
         self.y = SQUARE_DIMENSION * self.row

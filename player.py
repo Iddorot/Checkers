@@ -1,5 +1,6 @@
 import pygame
 from pygame.locals import *
+import configuration
 from configuration import SQUARE_DIMENSION, BOARD_ROWS, BOARD_COLS, SQUARE_COLOR, screen, WHITE, DARK, background_img, \
     RED
 from piece import Piece
@@ -142,3 +143,4 @@ class Player:
         else:
             rect_counter = True
             return rect_counter
+
