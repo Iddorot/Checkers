@@ -1,7 +1,8 @@
 import pygame, sys, os
 from pygame import Color, Surface
 from pygame.locals import *
-from configuration import screen, SQUARE_DIMENSION,background_img, SQUARE_COLOR,BRIGHT_SQUARE_COLOR, HEIGHT ,WIDTH ,TEXT_SIZE
+from configuration import screen, SQUARE_DIMENSION, background_img, SQUARE_COLOR, BRIGHT_SQUARE_COLOR, HEIGHT, WIDTH, \
+    TEXT_SIZE
 import board
 import piece
 import player
@@ -29,8 +30,8 @@ class Game():
                     quit()
                     run = False
 
-                if (WIDTH/2 + 125 > mouse[0] > 300) and HEIGHT/2 + 50 > mouse[1] > HEIGHT/2-50:
-                    pygame.draw.rect(screen, BRIGHT_SQUARE_COLOR, (WIDTH/2 - 100, HEIGHT/2- 50, 220, 110))
+                if (WIDTH / 2 + 125 > mouse[0] > 300) and HEIGHT / 2 + 50 > mouse[1] > HEIGHT / 2 - 50:
+                    pygame.draw.rect(screen, BRIGHT_SQUARE_COLOR, (WIDTH / 2 - 100, HEIGHT / 2 - 50, 220, 110))
 
                     if event.type == pygame.MOUSEBUTTONDOWN:
                         gui = player.Player()
@@ -38,27 +39,61 @@ class Game():
                         self.game_loop(self)
 
                 else:
-                    pygame.draw.rect(screen, SQUARE_COLOR, (WIDTH/2 - 100, HEIGHT/2- 50, 220, 110))
+                     pygame.draw.rect(screen, SQUARE_COLOR, (WIDTH / 2 - 100, HEIGHT / 2 - 50, 220, 110))
 
-                screen.blit(font.render("Checkers", True, (255, 255, 255)), (WIDTH/4 - 25, 50))
-                screen.blit(font.render("Play", True, (0, 0, 0)), (WIDTH/2 - 100, HEIGHT/2 - 50))
+                screen.blit(font.render("Checkers", True, (255, 255, 255)), (WIDTH / 4 - 25, 50))
+                screen.blit(font.render("Play", True, (0, 0, 0)), (WIDTH / 2 - 100, HEIGHT / 2 - 50))
 
             pygame.display.flip()
 
-
-
-
     def end_game(self):
-        pass
+        run = True
+        font = pygame.font.Font('freesansbold.ttf', TEXT_SIZE)
+        game_board = board.Board()
+        screen.blit(background_img, (0, 0))
+        exit_rect = (WIDTH / 2 - 100, HEIGHT / 2 - 50, 200, 100)
+        restart_rect = (WIDTH / 2 - 175, HEIGHT / 2 + 150, 350, 110)
+        while run:
+
+            mouse = pygame.mouse.get_pos()
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    quit()
+                    run = False
+
+                if (300 < mouse[0] < WIDTH / 2 + 125) and HEIGHT / 2 - 50 < mouse[1] < HEIGHT / 2 + 50:
+                    pygame.draw.rect(screen, BRIGHT_SQUARE_COLOR, exit_rect)
+
+                    if event.type == pygame.MOUSEBUTTONDOWN:
+                        exit()
+
+                elif 225 < mouse[0] < 575 and 550 < mouse[1] < 650:
+                    pygame.draw.rect(screen, BRIGHT_SQUARE_COLOR, restart_rect)
+
+                    if event.type == pygame.MOUSEBUTTONDOWN:
+                        gui = player.Player()
+                        gui.clean_screen(game_board)
+                        self.game_loop(self)
+
+                else:
+                    pygame.draw.rect(screen, SQUARE_COLOR, exit_rect)
+                    pygame.draw.rect(screen, SQUARE_COLOR, restart_rect)
+
+                screen.blit(font.render("Checkers", True, (SQUARE_COLOR)), (WIDTH / 4 - 20, 55))
+                screen.blit(font.render("Checkers", True, (255, 255, 255)), (WIDTH / 4 - 25, 50))
+                screen.blit(font.render("Exit", True, (0, 0, 0)), (WIDTH / 2 - 100, HEIGHT / 2 - 50))
+                screen.blit(font.render("Restart", True, (0, 0, 0)), (WIDTH / 2 - 175, HEIGHT / 2 + 150))
+
+            pygame.display.flip()
 
     def game_loop(self):
 
         clock = pygame.time.Clock()
-        game_over = False
         game_board = board.Board()
         gui = player.Player()
         rect_counter = False
         player_turn = 'white'
+        game_over = False
         # --------
         # MAINLOOP
         # --------
@@ -105,8 +140,6 @@ class Game():
                                         self.end_game(self)
                                     else:
                                         player_turn = 'white'
-
-
 
             gui.draw_pieces(game_board.board)
 
