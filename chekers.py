@@ -48,6 +48,7 @@ class Game:
 
 
 
+
             pygame.display.flip()
 
     def end_game(self , winner):
@@ -90,8 +91,8 @@ class Game:
                 screen.blit(font.render("Restart", True, (0, 0, 0)), (WIDTH / 2 - 175, HEIGHT / 2 + 150))
 
             if winner == "white":
-                screen.blit(font.render("White Wins!", True, SQUARE_COLOR), (100, 200))
-                screen.blit(font.render("White Wins!", True, (255, 255, 255)), (103, 203))
+                screen.blit(font.render("White Wins!", True, SQUARE_COLOR), (103, 203))
+                screen.blit(font.render("White Wins!", True, (255, 255, 255)), (100, 200))
             else:
                 screen.blit(font.render("Dark Wins!", True, (255, 255, 255)), (128, 203))
                 screen.blit(font.render("Dark Wins!", True, SQUARE_COLOR), (125, 200))
