@@ -156,5 +156,5 @@ class Game:
 
             gui.draw_pieces(game_board.board)
 
-test = Game
-test.welcome_menu(test)
+lets_start = Game
+lets_start.welcome_menu(lets_start)
