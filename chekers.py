@@ -18,7 +18,7 @@ class Game():
 
     def welcome_menu(self):
         run = True
-        font = pygame.font.Font(FONT,TEXT_SIZE)
+        font = pygame.font.Font(FONT, TEXT_SIZE)
         game_board = board.Board()
         screen.blit(background_img, (0, 0))
 
@@ -119,9 +119,9 @@ class Game():
                                 rect_counter = gui.second_click(game_board, rect_counter, piece, player_turn,
                                                                 from_piece)
                                 if not rect_counter:
-                                    if gui.check_win(game_board) is not None:
+                                    gui.check_win(game_board)
+                                    if gui.check_win(game_board) == "white wins":
                                         game_over = True
-                                        sys.exit()
                                         self.end_game(self)
                                     else:
                                         player_turn = 'dark'
@@ -134,9 +134,9 @@ class Game():
                                 rect_counter = gui.second_click(game_board, rect_counter, piece, player_turn,
                                                                 from_piece)
                                 if not rect_counter:
-                                    if gui.check_win(game_board) is not None:
+                                    gui.check_win(game_board)
+                                    if gui.check_win(game_board) == "dark wins":
                                         game_over = True
-                                        sys.exit()
                                         self.end_game(self)
                                     else:
                                         player_turn = 'white'
@@ -144,7 +144,6 @@ class Game():
             gui.draw_pieces(game_board.board)
 
 
-# Welome - names
 # winnig  ->end game/another one
 test = Game
 test.welcome_menu(test)

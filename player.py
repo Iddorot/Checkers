@@ -147,8 +147,8 @@ class Player:
 
     def check_win(self, board):
         if board.dark_left == 0:
-            "white wins"
+            return "white wins"
         elif board.white_left == 0:
-            "dark wins"
+            return "dark wins"
         else:
-            None
+            return None
