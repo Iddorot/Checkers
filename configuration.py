@@ -17,13 +17,13 @@ SQUARE_COLOR = (147, 80, 0)
 BRIGHT_SQUARE_COLOR = (160, 90, 0)
 
 
-FONT = 'RobotoSerif-VariableFont_GRAD,opsz,wdth,wght.ttf.'
+FONT = 'components\RobotoSerif-VariableFont_GRAD,opsz,wdth,wght.ttf.'
 TEXT_SIZE = 100
 # ------
 # SCREEN
 # ------
 
-background_img = pygame.image.load('BG.png')
+background_img = pygame.image.load('components\BG.png')
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption('CHECKERS')
 screen.blit(background_img, (0, 0))
@@ -32,22 +32,22 @@ screen.blit(background_img, (0, 0))
 # PIECES
 # ------
 
-white_p_img = pygame.image.load("white_p.png")
+white_p_img = pygame.image.load("components\white_p.png")
 white_p_img.convert()
 white_p_img = pygame.transform.scale(white_p_img, (SQUARE_DIMENSION, SQUARE_DIMENSION))
 WHITE = white_p_img
 
-white_king_img = pygame.image.load("white_king.png")
+white_king_img = pygame.image.load("components\white_king.png")
 white_king_img.convert()
 white_king_img = pygame.transform.scale(white_king_img, (SQUARE_DIMENSION // 2, SQUARE_DIMENSION // 2))
 WHITE_KING = white_king_img
 
-dark_p_img = pygame.image.load("dark_p.png")
+dark_p_img = pygame.image.load("components\dark_p.png")
 dark_p_img.convert()
 dark_p_img = pygame.transform.scale(dark_p_img, (SQUARE_DIMENSION, SQUARE_DIMENSION))
 DARK = dark_p_img
 
-dark_king_img = pygame.image.load("dark_king.png")
+dark_king_img = pygame.image.load("components\dark_king.png")
 dark_king_img.convert()
 dark_king_img = pygame.transform.scale(dark_king_img, (SQUARE_DIMENSION // 2, SQUARE_DIMENSION // 2))
 DARK_KING = dark_king_img
