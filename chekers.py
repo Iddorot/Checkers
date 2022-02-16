@@ -48,7 +48,7 @@ class Game():
 
     def end_game(self):
         run = True
-        font = pygame.font.Font('freesansbold.ttf', TEXT_SIZE)
+
         game_board = board.Board()
         screen.blit(background_img, (0, 0))
         exit_rect = (WIDTH / 2 - 100, HEIGHT / 2 - 50, 200, 100)
