@@ -2,7 +2,7 @@ import pygame, sys, os
 from pygame import Color, Surface
 from pygame.locals import *
 from configuration import screen, SQUARE_DIMENSION, background_img, SQUARE_COLOR, BRIGHT_SQUARE_COLOR, HEIGHT, WIDTH, \
-    TEXT_SIZE,FONT
+    TEXT_SIZE, FONT
 import board
 import piece
 import player
@@ -12,7 +12,7 @@ os.environ['SDL_VIDEO_CENTERED'] = '1'
 pygame.init()
 
 
-class Game():
+class Game:
     def __init__(self):
         self.welcome_menu()
 
@@ -41,12 +41,17 @@ class Game():
                 else:
                      pygame.draw.rect(screen, SQUARE_COLOR, (WIDTH / 2 - 100, HEIGHT / 2 - 50, 220, 110))
 
+                screen.blit(font.render("Checkers", True, SQUARE_COLOR), (WIDTH / 4 - 22, 53))
                 screen.blit(font.render("Checkers", True, (255, 255, 255)), (WIDTH / 4 - 25, 50))
                 screen.blit(font.render("Play", True, (0, 0, 0)), (WIDTH / 2 - 100, HEIGHT / 2 - 50))
 
+
+
+
             pygame.display.flip()
 
-    def end_game(self):
+    def end_game(self , winner):
+
         run = True
         font = pygame.font.Font(FONT, TEXT_SIZE)
         game_board = board.Board()
@@ -83,6 +88,13 @@ class Game():
                 screen.blit(font.render("Checkers", True, (255, 255, 255)), (WIDTH / 4 - 25, 50))
                 screen.blit(font.render("Exit", True, (0, 0, 0)), (WIDTH / 2 - 100, HEIGHT / 2 - 50))
                 screen.blit(font.render("Restart", True, (0, 0, 0)), (WIDTH / 2 - 175, HEIGHT / 2 + 150))
+
+            if winner == "white":
+                screen.blit(font.render("White Wins!", True, SQUARE_COLOR), (100, 200))
+                screen.blit(font.render("White Wins!", True, (255, 255, 255)), (103, 203))
+            else:
+                screen.blit(font.render("Dark Wins!", True, (255, 255, 255)), (128, 203))
+                screen.blit(font.render("Dark Wins!", True, SQUARE_COLOR), (125, 200))
 
             pygame.display.flip()
 
@@ -122,7 +134,7 @@ class Game():
                                     gui.check_win(game_board)
                                     if gui.check_win(game_board) == "white wins":
                                         game_over = True
-                                        self.end_game(self)
+                                        self.end_game(self,"white")
                                     else:
                                         player_turn = 'dark'
 
@@ -137,13 +149,11 @@ class Game():
                                     gui.check_win(game_board)
                                     if gui.check_win(game_board) == "dark wins":
                                         game_over = True
-                                        self.end_game(self)
+                                        self.end_game(self,"dark")
                                     else:
                                         player_turn = 'white'
 
             gui.draw_pieces(game_board.board)
 
-
-# winnig  ->end game/another one
 test = Game
 test.welcome_menu(test)
