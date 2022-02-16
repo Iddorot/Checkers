@@ -2,7 +2,7 @@ import pygame, sys, os
 from pygame import Color, Surface
 from pygame.locals import *
 from configuration import screen, SQUARE_DIMENSION, background_img, SQUARE_COLOR, BRIGHT_SQUARE_COLOR, HEIGHT, WIDTH, \
-    TEXT_SIZE
+    TEXT_SIZE,FONT
 import board
 import piece
 import player
@@ -18,7 +18,7 @@ class Game():
 
     def welcome_menu(self):
         run = True
-        font = pygame.font.Font('freesansbold.ttf', TEXT_SIZE)
+        font = pygame.font.Font(FONT,TEXT_SIZE)
         game_board = board.Board()
         screen.blit(background_img, (0, 0))
 
@@ -48,7 +48,7 @@ class Game():
 
     def end_game(self):
         run = True
-
+        font = pygame.font.Font(FONT, TEXT_SIZE)
         game_board = board.Board()
         screen.blit(background_img, (0, 0))
         exit_rect = (WIDTH / 2 - 100, HEIGHT / 2 - 50, 200, 100)

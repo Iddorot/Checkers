@@ -9,12 +9,16 @@ HEIGHT = 800
 BOARD_ROWS = 8
 BOARD_COLS = 8
 SQUARE_DIMENSION = WIDTH // BOARD_COLS
-TEXT_SIZE = 100
 
-# rgb: red green blue
+
+
 RED = (255, 0, 0)
 SQUARE_COLOR = (147, 80, 0)
 BRIGHT_SQUARE_COLOR = (160, 90, 0)
+
+
+FONT = 'RobotoSerif-VariableFont_GRAD,opsz,wdth,wght.ttf.'
+TEXT_SIZE = 100
 # ------
 # SCREEN
 # ------
