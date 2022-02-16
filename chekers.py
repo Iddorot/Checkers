@@ -79,7 +79,7 @@ class Game():
                     pygame.draw.rect(screen, SQUARE_COLOR, exit_rect)
                     pygame.draw.rect(screen, SQUARE_COLOR, restart_rect)
 
-                screen.blit(font.render("Checkers", True, (SQUARE_COLOR)), (WIDTH / 4 - 20, 55))
+                screen.blit(font.render("Checkers", True, SQUARE_COLOR), (WIDTH / 4 - 20, 55))
                 screen.blit(font.render("Checkers", True, (255, 255, 255)), (WIDTH / 4 - 25, 50))
                 screen.blit(font.render("Exit", True, (0, 0, 0)), (WIDTH / 2 - 100, HEIGHT / 2 - 50))
                 screen.blit(font.render("Restart", True, (0, 0, 0)), (WIDTH / 2 - 175, HEIGHT / 2 + 150))
