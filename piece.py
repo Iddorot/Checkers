@@ -1,9 +1,7 @@
-
 from configuration import SQUARE_DIMENSION, screen, WHITE, DARK, WHITE_KING, DARK_KING
 
 
 class Piece:
-
     def __init__(self, row, col, color):
         self.row = row
         self.col = col
@@ -27,18 +25,22 @@ class Piece:
         if self.color == "white":
             if self.king:
                 screen.blit(WHITE, (self.x, self.y))
-                screen.blit(WHITE_KING, (self.x + (SQUARE_DIMENSION / 4), self.y + (SQUARE_DIMENSION / 4)))
+                screen.blit(
+                    WHITE_KING,
+                    (self.x + (SQUARE_DIMENSION / 4), self.y + (SQUARE_DIMENSION / 4)),
+                )
             else:
                 screen.blit(WHITE, (self.x, self.y))
 
         if self.color == "dark":
             if self.king:
                 screen.blit(DARK, (self.x, self.y))
-                screen.blit(DARK_KING, (self.x + (SQUARE_DIMENSION / 4), self.y + (SQUARE_DIMENSION / 4)))
+                screen.blit(
+                    DARK_KING,
+                    (self.x + (SQUARE_DIMENSION / 4), self.y + (SQUARE_DIMENSION / 4)),
+                )
             else:
                 screen.blit(DARK, (self.x, self.y))
-
-
 
     def __repr__(self):
         return str(self.color)
