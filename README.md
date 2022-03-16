@@ -5,7 +5,7 @@ My first Python project using the Pygame Library, coding the game - Checkers!
 
 ## Requirements
 
-<a href="https://pypi.org/project/pipenv/" target="_blank">pipenv</a>
+<a href="https://github.com/Iddorot/Checkers/blob/develop/Pipfile" target="_blank">pipenv</a>
 
 ## Explanation  
 
