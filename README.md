@@ -19,5 +19,5 @@ The checkers game is split into five different files:
 ## Run
 
 ```
-pipenv run chekers.py
+pipenv run python chekers.py 
 ```
